@@ -14,7 +14,7 @@ public class JwtService {
 
     private final String secretKey = System.getenv("JWT_SECRET");
 
-    private final long expirationTime = 1000 * 20;
+    private final long expirationTime = 1000 * 60 * 5;
 
     private SecretKey getSigningKey() {
 
