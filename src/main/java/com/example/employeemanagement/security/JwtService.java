@@ -3,6 +3,7 @@ package com.example.employeemanagement.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -14,7 +15,8 @@ public class JwtService {
 
     private final String secretKey = System.getenv("JWT_SECRET");
 
-    private final long expirationTime = 1000 * 60 * 5;
+    @Value("${jwt.expiration}")
+    private long expirationTime;
 
     private SecretKey getSigningKey() {
 
