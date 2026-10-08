@@ -1,17 +1,19 @@
 package com.example.employeemanagement.dto;
 
+import java.math.BigDecimal;
+
 public class EmployeeResponseDTO {
 
     private Long id;
     private String name;
     private String email;
     private String department;
-    private Double salary;
+    private BigDecimal salary;
 
     public EmployeeResponseDTO() {
     }
 
-    public EmployeeResponseDTO(Long id, String name, String email, String department, Double salary) {
+    public EmployeeResponseDTO(Long id, String name, String email, String department, BigDecimal salary) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -51,10 +53,10 @@ public class EmployeeResponseDTO {
         this.department = department;
     }
 
-    public Double getSalary(){
+    public BigDecimal getSalary(){
         return salary;
     }
-    public void setSalary(Double salary){
+    public void setSalary(BigDecimal salary){
         this.salary=salary;
     }
 }

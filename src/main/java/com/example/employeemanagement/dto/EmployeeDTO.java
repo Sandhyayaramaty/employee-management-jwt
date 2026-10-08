@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
+import java.math.BigDecimal;
+
 //The DTO is basically a safe API representation of the Employee.
 public class EmployeeDTO {
 
@@ -20,12 +22,12 @@ public class EmployeeDTO {
 
     @Positive(message = "Salary must be greater than 0")
     @NotNull(message = "Salary cannot be null")
-    private Double salary;
+    private BigDecimal salary;
 
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(String name, String email, String department, Double salary) {
+    public EmployeeDTO(String name, String email, String department, BigDecimal salary) {
         this.name = name;
         this.email = email;
         this.department = department;
@@ -56,10 +58,10 @@ public class EmployeeDTO {
         this.department = department;
     }
 
-    public Double getSalary() {
+    public BigDecimal getSalary() {
         return salary;
     }
-    public void setSalary(Double salary) {
+    public void setSalary(BigDecimal salary) {
         this.salary = salary;
     }
 }
