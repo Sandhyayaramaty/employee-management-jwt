@@ -124,6 +124,11 @@ public class EmployeeService {
     }
 
     public void deleteEmployeeById(Long id) {
-        employeeRepository.deleteById(id);
+
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() ->
+                        new EmployeeNotFoundException("Employee not found"));
+
+        employeeRepository.delete(employee);
     }
 }
